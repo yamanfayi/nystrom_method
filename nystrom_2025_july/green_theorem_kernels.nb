@@ -1,0 +1,793 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35153,        785]
+NotebookOptionsPosition[     33250,        753]
+NotebookOutlinePosition[     33713,        770]
+CellTagsIndexPosition[     33670,        767]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vertices", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.0462663", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.0646801", ",", "0.0328262"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.0275032", ",", "0.0374615"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vertices", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"region", "=", 
+    RowBox[{"Polygon", "[", "vertices", "]"}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x1", "=", "0.0151834"}], ";", 
+  RowBox[{"y1", "=", "0.00770954"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"x2", "=", "0.0407863"}], ";", 
+  RowBox[{"y2", "=", "0.007144"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"x3", "=", "0.0299534"}], ";", 
+  RowBox[{"y3", "=", "0.0287724"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"x4", "=", "0.0525265"}], ";", 
+  RowBox[{"y4", "=", "0.0266618"}], ";"}], "\n", 
+ RowBox[{"x78", "=", "0.0159319185473049"}], "\[IndentingNewLine]", 
+ RowBox[{"y78", "=", 
+  RowBox[{"-", "0.0111677971553096"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"10", "^", 
+    RowBox[{"-", "6"}]}]}], ";"}], "\n", 
+ RowBox[{"x1", "=", 
+  RowBox[{"-", 
+   RowBox[{"3", "^", 
+    RowBox[{"(", 
+     RowBox[{"-", "0.5"}], ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"y1", "=", 
+  RowBox[{"-", 
+   RowBox[{"3", "^", 
+    RowBox[{"(", 
+     RowBox[{"-", "0.5"}], ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "=", 
+    RowBox[{
+     RowBox[{"0.000410717", "^", 
+      RowBox[{"(", "0", ")"}]}], "*", "  ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"x", "*", 
+        RowBox[{"3", "^", "0.5"}]}]}], ")"}], "*", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"y", "*", 
+        RowBox[{"3", "^", "0.5"}]}]}], ")"}], "*", "0.25"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"kernel1", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "x1"}], ")"}], "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y", "-", "y1"}], ")"}], "^", "2"}], "+", 
+       RowBox[{"n", "^", "2"}]}], "]"}], "^", "2.5"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"kernel2", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "x2"}], ")"}], "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y", "-", "y2"}], ")"}], "^", "2"}], "+", 
+       RowBox[{"n", "^", "2"}]}], "]"}], "^", "2.5"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"kernel3", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "x3"}], ")"}], "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y", "-", "y3"}], ")"}], "^", "2"}], "+", 
+       RowBox[{"n", "^", "2"}]}], "]"}], "^", "2.5"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"kernel4", "=", 
+    RowBox[{"1", "/", 
+     RowBox[{
+      RowBox[{"Sqrt", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "x4"}], ")"}], "^", "2"}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"y", "-", "y4"}], ")"}], "^", "2"}], "+", 
+        RowBox[{"n", "^", "2"}]}], "]"}], "^", "2.5"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Res1", "=", 
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{
+     RowBox[{"kernel1", "*", "f"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "region"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Res2", "=", 
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{
+     RowBox[{"kernel2", "*", "f"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "region"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Res3", "=", 
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{
+     RowBox[{"kernel3", "*", "f"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "region"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Res4", "=", 
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{
+     RowBox[{"kernel4", "*", "f"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "region"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"kernel5", "=", "    ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", "*", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "x1"}], ")"}], "^", "2"}]}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"y", "-", "y1"}], ")"}], "^", "2"}]}], ")"}], "/", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "x1"}], ")"}], "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y", "-", "y1"}], ")"}], "^", "2"}], "+", 
+       RowBox[{"n", "^", "2"}]}], "]"}], "^", "5"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Res1", "+", "Res2", "+", "Res3", "+", "Res4"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Res", "=", 
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{"kernel4", ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "region"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"tryy", "=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{"kernel5", ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "region"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.961580124762603*^9, 3.961580124763999*^9}, {
+   3.9615849976923413`*^9, 3.9615850515205593`*^9}, {3.961585155325616*^9, 
+   3.9615852686777325`*^9}, {3.9615853065894594`*^9, 
+   3.9615853165082135`*^9}, {3.9615853838094344`*^9, 3.961585433487542*^9}, {
+   3.9615879568928814`*^9, 3.9615882012202005`*^9}, {3.961588493780744*^9, 
+   3.96158856746813*^9}, {3.961588633791791*^9, 3.9615886551717577`*^9}, {
+   3.9615887143486075`*^9, 3.9615887825535536`*^9}, {3.961588844573332*^9, 
+   3.9615888466510715`*^9}, {3.9615893319779825`*^9, 
+   3.9615893832891903`*^9}, {3.9616455696240273`*^9, 
+   3.9616456431128626`*^9}, {3.96164582077514*^9, 3.961645829808403*^9}, {
+   3.9616496045078135`*^9, 3.961649764447544*^9}, {3.961660773891093*^9, 
+   3.9616607845043097`*^9}, {3.9617457196777906`*^9, 
+   3.9617458098957543`*^9}, {3.9618405247218904`*^9, 3.961840533361717*^9}, {
+   3.9618407546173954`*^9, 3.9618408705084224`*^9}, 3.9618409501764574`*^9, {
+   3.9618410167755613`*^9, 3.9618410505091877`*^9}},
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"a25c5ecf-9699-4961-a638-6ac2b04d008c"],
+
+Cell[BoxData["0.0159319185473049`"], "Output",
+ CellChangeTimes->{
+  3.9616497656126013`*^9, 3.9616609311498384`*^9, 3.9617457077481394`*^9, 
+   3.961745813306636*^9, 3.961840534424796*^9, {3.9618408187958517`*^9, 
+   3.9618408423665295`*^9}, 3.9618408908951817`*^9, 3.9618409509545503`*^9, {
+   3.961841022190755*^9, 3.961841050918977*^9}},
+ CellLabel->
+  "Out[108]=",ExpressionUUID->"a24e1425-f538-4c56-90ba-8609e5792ecb"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.0111677971553096`"}]], "Output",
+ CellChangeTimes->{
+  3.9616497656126013`*^9, 3.9616609311498384`*^9, 3.9617457077481394`*^9, 
+   3.961745813306636*^9, 3.961840534424796*^9, {3.9618408187958517`*^9, 
+   3.9618408423665295`*^9}, 3.9618408908951817`*^9, 3.9618409509545503`*^9, {
+   3.961841022190755*^9, 3.9618410509222636`*^9}},
+ CellLabel->
+  "Out[109]=",ExpressionUUID->"6638b4ee-7d6e-4fdb-a42f-53977ee6e68c"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.5773502691896257`"}]], "Output",
+ CellChangeTimes->{
+  3.9616497656126013`*^9, 3.9616609311498384`*^9, 3.9617457077481394`*^9, 
+   3.961745813306636*^9, 3.961840534424796*^9, {3.9618408187958517`*^9, 
+   3.9618408423665295`*^9}, 3.9618408908951817`*^9, 3.9618409509545503`*^9, {
+   3.961841022190755*^9, 3.9618410509222636`*^9}},
+ CellLabel->
+  "Out[111]=",ExpressionUUID->"abeee583-664d-4485-a359-da4c1e8a609a"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.5773502691896257`"}]], "Output",
+ CellChangeTimes->{
+  3.9616497656126013`*^9, 3.9616609311498384`*^9, 3.9617457077481394`*^9, 
+   3.961745813306636*^9, 3.961840534424796*^9, {3.9618408187958517`*^9, 
+   3.9618408423665295`*^9}, 3.9618408908951817`*^9, 3.9618409509545503`*^9, {
+   3.961841022190755*^9, 3.961841050926922*^9}},
+ CellLabel->
+  "Out[112]=",ExpressionUUID->"6ae31329-8d2d-494e-ac0e-b1bcae7b777b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "slwcon", 
+   "\"Numerical integration converging too slowly; suspect one of the \
+following: singularity, value of the integration is 0, highly oscillatory \
+integrand, or WorkingPrecision too small.\"", 2, 118, 45, 
+   27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.961841050926922*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"774a20ed-e907-4f8f-ba77-65f74ff98c76"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "ncvb", 
+   "\"NIntegrate failed to converge to prescribed accuracy after \
+\\!\\(\\*RowBox[{\\\"18\\\"}]\\) recursive bisections in \
+\\!\\(\\*RowBox[{\\\"x\\\"}]\\) near \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\
+\\\"{\\\", RowBox[{\\\"0.21132600449981997`\\\", \\\",\\\", \
+\\\"0.7320544748199524`\\\"}], \\\"}\\\"}]\\). NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"15123.58152076668`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"6347.314967178446`\\\"}]\\) for the integral and error \
+estimates.\"", 2, 118, 46, 27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.9618410509370623`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"01a084b9-235c-4883-a4c1-781afec61efc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "slwcon", 
+   "\"Numerical integration converging too slowly; suspect one of the \
+following: singularity, value of the integration is 0, highly oscillatory \
+integrand, or WorkingPrecision too small.\"", 2, 119, 47, 
+   27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.961841050947299*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"84dd57b5-8f8c-49b6-a289-4958eafb2849"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "ncvb", 
+   "\"NIntegrate failed to converge to prescribed accuracy after \
+\\!\\(\\*RowBox[{\\\"18\\\"}]\\) recursive bisections in \
+\\!\\(\\*RowBox[{\\\"x\\\"}]\\) near \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\
+\\\"{\\\", RowBox[{\\\"0.49643266343536685`\\\", \\\",\\\", \
+\\\"0.047606335682125044`\\\"}], \\\"}\\\"}]\\). NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"1338.4692529146723`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"132.5947142710562`\\\"}]\\) for the integral and error \
+estimates.\"", 2, 119, 48, 27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.9618410509542665`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"d7cb0861-4355-4184-8673-fcf906055bb5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "slwcon", 
+   "\"Numerical integration converging too slowly; suspect one of the \
+following: singularity, value of the integration is 0, highly oscillatory \
+integrand, or WorkingPrecision too small.\"", 2, 120, 49, 
+   27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.9618410509873066`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"4efb9698-9942-41d6-b28c-8c56f646a29c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "ncvb", 
+   "\"NIntegrate failed to converge to prescribed accuracy after \
+\\!\\(\\*RowBox[{\\\"18\\\"}]\\) recursive bisections in \
+\\!\\(\\*RowBox[{\\\"x\\\"}]\\) near \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\
+\\\"{\\\", RowBox[{\\\"0.48561418199005435`\\\", \\\",\\\", \
+\\\"0.057088824163986494`\\\"}], \\\"}\\\"}]\\). NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"3119.1139598341542`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"1410.9314476361444`\\\"}]\\) for the integral and error \
+estimates.\"", 2, 120, 50, 27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.9618410509969654`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"33b5080e-1b26-4d14-ae13-b37009035904"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "slwcon", 
+   "\"Numerical integration converging too slowly; suspect one of the \
+following: singularity, value of the integration is 0, highly oscillatory \
+integrand, or WorkingPrecision too small.\"", 2, 121, 51, 
+   27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.961841051000817*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"6f030106-cce0-40ff-9bbd-d04f9f530ca9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "ncvb", 
+   "\"NIntegrate failed to converge to prescribed accuracy after \
+\\!\\(\\*RowBox[{\\\"18\\\"}]\\) recursive bisections in \
+\\!\\(\\*RowBox[{\\\"x\\\"}]\\) near \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\
+\\\"{\\\", RowBox[{\\\"0.4866708531326325`\\\", \\\",\\\", \
+\\\"0.07714368052980974`\\\"}], \\\"}\\\"}]\\). NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"4156.392400505958`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"3056.950546710759`\\\"}]\\) for the integral and error \
+estimates.\"", 2, 121, 52, 27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.961841051008926*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"dd202ba0-aeb3-4d10-be27-a6f34321f0a8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "slwcon", 
+   "\"Numerical integration converging too slowly; suspect one of the \
+following: singularity, value of the integration is 0, highly oscillatory \
+integrand, or WorkingPrecision too small.\"", 2, 124, 53, 
+   27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.961841051016988*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"de185779-b754-4db2-b3ec-0b5779f365c3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "ncvb", 
+   "\"NIntegrate failed to converge to prescribed accuracy after \
+\\!\\(\\*RowBox[{\\\"18\\\"}]\\) recursive bisections in \
+\\!\\(\\*RowBox[{\\\"x\\\"}]\\) near \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\
+\\\"{\\\", RowBox[{\\\"0.4866708531326325`\\\", \\\",\\\", \
+\\\"0.07714368052980974`\\\"}], \\\"}\\\"}]\\). NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"19165.613081139785`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"14107.401233065759`\\\"}]\\) for the integral and error \
+estimates.\"", 2, 124, 54, 27864309275974241133, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.961580126244233*^9, 3.961584695364726*^9, {3.9615852600543666`*^9, 
+   3.961585269516215*^9}, 3.9615853173676987`*^9, {3.9615853843466988`*^9, 
+   3.9615854340102797`*^9}, {3.9615879969709425`*^9, 
+   3.9615880708849273`*^9}, {3.9615881155931063`*^9, 3.961588202927289*^9}, {
+   3.9615884873385096`*^9, 3.961588567765831*^9}, {3.9615886436916056`*^9, 
+   3.961588655453498*^9}, {3.9615887150370646`*^9, 3.96158878288066*^9}, 
+   3.961588847008458*^9, {3.961589347053598*^9, 3.961589383564167*^9}, 
+   3.9616455756235867`*^9, {3.961645625003227*^9, 3.96164564376647*^9}, 
+   3.9616458302075396`*^9, {3.9616496596171045`*^9, 3.9616497653025618`*^9}, 
+   3.9616609308181515`*^9, 3.9617457074314337`*^9, 3.9617458133134365`*^9, 
+   3.9618405349567833`*^9, {3.9618408188071594`*^9, 3.9618408423747163`*^9}, 
+   3.9618408910311637`*^9, 3.9618409509651213`*^9, {3.961841022207114*^9, 
+   3.961841051016988*^9}},
+ CellLabel->
+  "During evaluation of \
+In[101]:=",ExpressionUUID->"a6a520ed-04b3-473f-a4bb-64d023f951c1"],
+
+Cell[BoxData[
+ RowBox[{
+  UnderscriptBox["\[Integral]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], "\[Element]", 
+    InterpretationBox[
+     RowBox[{
+      TagBox["Polygon",
+       "SummaryHead"], "[", 
+      DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = 
+       "Ready", Typeset`spolygon$$ = 
+       Polygon[{{-1, -1}, {1, -1}, {1, 1}, {-1, 1}}]}, 
+       TemplateBox[{
+         PaneSelectorBox[{False -> GridBox[{{
+               PaneBox[
+                ButtonBox[
+                 DynamicBox[
+                  FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"],
+                   ImageSizeCache -> {
+                   7.733722671294268, {0., 7.733722671294268}}], Appearance -> 
+                 None, BaseStyle -> {}, 
+                 ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+                 Automatic, Method -> "Preemptive"], 
+                Alignment -> {Center, Center}, ImageSize -> 
+                Dynamic[{
+                  Automatic, 
+                   3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+               GraphicsBox[{
+                 Hue[0.6, 0.3, 0.85], 
+                 EdgeForm[
+                  Hue[0.6, 0.3, 0.85]], 
+                 PolygonBox[{{-1, -1}, {1, -1}, {1, 1}, {-1, 1}}]}, ImageSize -> 
+                Dynamic[{5.25, 3.5} (CurrentValue["FontCapHeight"]/
+                   AbsoluteCurrentValue[Magnification])]], 
+               GridBox[{{
+                  RowBox[{
+                    TagBox["\"Number of points: \"", "SummaryItemAnnotation"],
+                     "\[InvisibleSpace]", 
+                    TagBox["4", "SummaryItem"]}]}, {
+                  RowBox[{
+                    TagBox[
+                    "\"Embedding dimension: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["2", "SummaryItem"]}]}}, AutoDelete -> False, 
+                BaseStyle -> {
+                 ShowStringCharacters -> False, NumberMarks -> False, 
+                  PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                GridBoxAlignment -> {
+                 "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {
+                 "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+             False, BaselinePosition -> {1, 1}, 
+             GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+           GridBox[{{
+               PaneBox[
+                ButtonBox[
+                 DynamicBox[
+                  FEPrivate`FrontEndResource[
+                  "FEBitmaps", "SummaryBoxCloser"]], Appearance -> None, 
+                 BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = False), 
+                 Evaluator -> Automatic, Method -> "Preemptive"], 
+                Alignment -> {Center, Center}, ImageSize -> 
+                Dynamic[{
+                  Automatic, 
+                   3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+               GraphicsBox[{
+                 Hue[0.6, 0.3, 0.85], 
+                 EdgeForm[
+                  Hue[0.6, 0.3, 0.85]], 
+                 PolygonBox[{{-1, -1}, {1, -1}, {1, 1}, {-1, 1}}]}, ImageSize -> 
+                Dynamic[{5.25, 3.5} (CurrentValue["FontCapHeight"]/
+                   AbsoluteCurrentValue[Magnification])]], 
+               GridBox[{{
+                  RowBox[{
+                    TagBox["\"Number of points: \"", "SummaryItemAnnotation"],
+                     "\[InvisibleSpace]", 
+                    TagBox["4", "SummaryItem"]}]}, {
+                  RowBox[{
+                    TagBox[
+                    "\"Embedding dimension: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["2", "SummaryItem"]}]}, {
+                  RowBox[{
+                    TagBox["\"Type: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    Quiet[
+                    Apply[Region`PolygonDump`polygonType, 
+                    Region`PolygonDump`computeType[Typeset`spolygon$$]]], 
+                    StandardForm], CachedValue :> 
+                    AnimatorBox[
+                    0, {0, Infinity}, AppearanceElements -> "ProgressSlider", 
+                    ImageSize -> 20], SynchronousUpdating -> False, 
+                    TrackedSymbols :> {}], "SummaryItem"]}]}, {
+                  RowBox[{
+                    TagBox["\"Bounds: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    Region`PolygonDump`iRegionBounds[Typeset`spolygon$$], 
+                    StandardForm], CachedValue :> 
+                    AnimatorBox[
+                    0, {0, Infinity}, AppearanceElements -> "ProgressSlider", 
+                    ImageSize -> 20], SynchronousUpdating -> False, 
+                    TrackedSymbols :> {}], "SummaryItem"]}]}, {
+                  RowBox[{
+                    TagBox["\"Area: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    Region`PolygonDump`iArea[Typeset`spolygon$$], 
+                    StandardForm], CachedValue :> 
+                    AnimatorBox[
+                    0, {0, Infinity}, AppearanceElements -> "ProgressSlider", 
+                    ImageSize -> 20], SynchronousUpdating -> False, 
+                    TrackedSymbols :> {}], "SummaryItem"]}]}}, AutoDelete -> 
+                False, BaseStyle -> {
+                 ShowStringCharacters -> False, NumberMarks -> False, 
+                  PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                GridBoxAlignment -> {
+                 "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {
+                 "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+             False, BaselinePosition -> {1, 1}, 
+             GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+          Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+        "SummaryPanel"],
+       DynamicModuleValues:>{}], "]"}],
+     Polygon[{{-1, -1}, {1, -1}, {1, 1}, {-1, 1}}],
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}]], 
+  FractionBox[
+   RowBox[{
+    RowBox[{"2", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"0.5773502691896257`", "\[VeryThinSpace]", "+", "x"}], ")"}], 
+      "2"]}], "-", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"0.5773502691896257`", "\[VeryThinSpace]", "+", "y"}], ")"}], 
+     "2"]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", "1000000000000"], "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"0.5773502691896257`", "\[VeryThinSpace]", "+", "x"}], ")"}], 
+       "2"], "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"0.5773502691896257`", "\[VeryThinSpace]", "+", "y"}], ")"}], 
+       "2"]}], ")"}], 
+    RowBox[{"5", "/", "2"}]]]}]], "Output",
+ CellChangeTimes->{
+  3.9616497656126013`*^9, 3.9616609311498384`*^9, 3.9617457077481394`*^9, 
+   3.961745813306636*^9, 3.961840534424796*^9, {3.9618408187958517`*^9, 
+   3.9618408423665295`*^9}, 3.9618408908951817`*^9, 3.9618409509545503`*^9, {
+   3.961841022190755*^9, 3.9618410289836297`*^9}, 3.961841623962146*^9},
+ CellLabel->
+  "Out[125]=",ExpressionUUID->"22036216-44f3-43a8-b3f9-850444c22cea"]
+}, Open  ]]
+},
+WindowSize->{1291.9245283018868`, 653.4339622641509},
+WindowMargins->{{0.6792452830188679, Automatic}, {
+  Automatic, 0.6792452830188679}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c5980016-e619-432a-bbed-da8d47350ec8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7215, 225, 542, "Input",ExpressionUUID->"a25c5ecf-9699-4961-a638-6ac2b04d008c"],
+Cell[7798, 249, 424, 7, 32, "Output",ExpressionUUID->"a24e1425-f538-4c56-90ba-8609e5792ecb"],
+Cell[8225, 258, 443, 8, 32, "Output",ExpressionUUID->"6638b4ee-7d6e-4fdb-a42f-53977ee6e68c"],
+Cell[8671, 268, 443, 8, 32, "Output",ExpressionUUID->"abeee583-664d-4485-a359-da4c1e8a609a"],
+Cell[9117, 278, 441, 8, 32, "Output",ExpressionUUID->"6ae31329-8d2d-494e-ac0e-b1bcae7b777b"],
+Cell[9561, 288, 1373, 24, 28, "Message",ExpressionUUID->"774a20ed-e907-4f8f-ba77-65f74ff98c76"],
+Cell[10937, 314, 1726, 29, 28, "Message",ExpressionUUID->"01a084b9-235c-4883-a4c1-781afec61efc"],
+Cell[12666, 345, 1373, 24, 28, "Message",ExpressionUUID->"84dd57b5-8f8c-49b6-a289-4958eafb2849"],
+Cell[14042, 371, 1729, 29, 28, "Message",ExpressionUUID->"d7cb0861-4355-4184-8673-fcf906055bb5"],
+Cell[15774, 402, 1375, 24, 28, "Message",ExpressionUUID->"4efb9698-9942-41d6-b28c-8c56f646a29c"],
+Cell[17152, 428, 1730, 29, 28, "Message",ExpressionUUID->"33b5080e-1b26-4d14-ae13-b37009035904"],
+Cell[18885, 459, 1373, 24, 28, "Message",ExpressionUUID->"6f030106-cce0-40ff-9bbd-d04f9f530ca9"],
+Cell[20261, 485, 1724, 29, 28, "Message",ExpressionUUID->"dd202ba0-aeb3-4d10-be27-a6f34321f0a8"],
+Cell[21988, 516, 1373, 24, 28, "Message",ExpressionUUID->"de185779-b754-4db2-b3ec-0b5779f365c3"],
+Cell[23364, 542, 1726, 29, 28, "Message",ExpressionUUID->"a6a520ed-04b3-473f-a4bb-64d023f951c1"],
+Cell[25093, 573, 8141, 177, 90, "Output",ExpressionUUID->"22036216-44f3-43a8-b3f9-850444c22cea"]
+}, Open  ]]
+}
+]
+*)
+
